@@ -1,0 +1,66 @@
+<!-- 
+<div class="container">
+    <div class="searchposition">
+        <div class="shadow-lg col-12 col-xl-9 rounded-1 shadow my-5 my-xl-0 p-3 ps-4">
+            
+
+           
+        </div>
+    </div>
+    
+</div>
+-->
+
+<form class="row">
+    <div class="col-md form-group">
+        
+        <label for="pick-up-date-input" class="form-label text-dark">
+            Pick-up Location:
+        </label>
+         <select class="form-select">
+            <option selected>Choose a location</option>
+            <option value="İstanbul Sabiha Gökçen (SAW)">One</option>
+            <option value="İstanbul Kadıköy ">Two</option>
+            <option value="İstanbul Kartal">Three</option>
+         </select>                     
+    </div>
+
+    <div class="col-md form-group">
+        <label for="pick-up-date-input" class="form-label text-dark">
+            Pick-up Date:
+        </label>
+        <input 
+        class="form-control"
+        type="datetime-local"
+        value="DateTimeNow | date:'yyyy-MM-ddThh:mm'"
+        id="pick-up-date-input"            
+        >
+    </div>
+
+    <div class="col-md form-group">
+        <label for="return-date-input" class="form-label text-dark">
+            Return Date:
+        </label>
+        
+        <input 
+        class="form-control"
+        type="datetime-local"
+        value="DateTimeNow | date:'yyyy-MM-ddThh:mm'"
+        id="return-date-input"            
+        >
+    </div>
+
+    <style>
+        .buttonposition{
+            position: relative;
+            top: 25px;
+        }
+    </style>
+    <div class="buttonposition">
+        <button type="button" class="btn btn-success btn-rounded  btn-block  btn-lg " data-mdb-ripple-color="#ffffff"> search <i class="fas fa-search ms-1"></i></button>
+    </div>
+    
+    
+
+</form>
+
