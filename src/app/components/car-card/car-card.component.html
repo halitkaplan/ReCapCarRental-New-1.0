@@ -1,17 +1,42 @@
-<div class="card text  ">
-    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-      <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg" class="img-fluid" />
-      <a href="#!">
-        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-      </a>
-    </div>
-    <div class="card-header">2020</div>
-    <div class="card-body">
-      <h5 class="card-title-bold">Ford</h5>
-      <p class="card-text">
-        $75
-      </p>
-  
-      <button type="button" class="btn btn-primary">Button</button>
-    </div>
-  </div>
+
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-grow text-primary"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<div class="container" style="margin-left: 150mm; margin-top: -300mm;">
+  <div class="" style="width: 320mm;">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+          <div *ngFor="let car of cars" class="col">
+            <div  class="card h-100">
+              <div   class="bg-image hover-overlay ripple"  data-mdb-ripple-color="light">
+                  <img src="https://localhost:44323/api/CarImages/getbycarid?carId={{car.carId}}" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                  </a>
+                </div>
+                
+                
+                <div class="card-header">{{car.modelYear}}</div>
+                <div class="card-body">
+                  <h5 class="card-title">{{car.carName}}</h5>
+                  <p class="card-text">
+                    {{car.description}}
+                    {{car.carId}}
+                  </p>
+              
+                  <button type="button" class="btn btn-primary">Button</button>
+                </div>                                              
+            </div>
+          </div>   
+          
+      </div>
+  </div>            
+</div>
+                                                                                                               
+     
+

@@ -32,12 +32,16 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/angular-tilt/angular-tilt.d.ts",
+              "./node_modules/vanilla-tilt/dist/vanilla-tilt.js",
               "src/styles.scss"
               
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./node_modules/jquery/dist/jquery.min.js"
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/angular-tilt/angular-tilt.d.ts",
+              "./node_modules/vanilla-tilt/dist/vanilla-tilt.js"
               
             ]
           },

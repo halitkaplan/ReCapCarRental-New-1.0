@@ -6,44 +6,20 @@
                     <div class="container py-5">
                       <div class="row">
                         <!-- Shop sidebar-->
-                        <div class="col-xl-2 col-lg-3 order-2 order-lg-1">                         
+                        <div  class="col-xl-2 col-lg-3 order-2 order-lg-1">                         
                           
                           
-                          <h5 class="mb-3">Show by brand</h5>
-                          <div class="mb-2 form-check">
-                            <input class="form-check-input" id="exampleCheck1" type="checkbox" checked>
-                            <label class="form-check-label" for="exampleCheck1">Ford</label>
-                          </div>
-                          <div class="mb-2 form-check">
-                            <input class="form-check-input" id="exampleCheck2" type="checkbox" checked>
-                            <label class="form-check-label" for="exampleCheck2">Fiat</label>
-                          </div>
-                          <div class="mb-2 form-check">
-                            <input class="form-check-input" id="exampleCheck3" type="checkbox" checked>
-                            <label class="form-check-label" for="exampleCheck3">Nissan</label>
-                          </div>
-                          <div class="mb-2 form-check">
-                            <input class="form-check-input" id="exampleCheck4" type="checkbox" checked>
-                            <label class="form-check-label" for="exampleCheck4">Honda</label>
-                          </div>
-                          <div class="mb-2 form-check">
-                            <input class="form-check-input" id="exampleCheck5" type="checkbox">
-                            <label class="form-check-label" for="exampleCheck5">Range Rover</label>
-                          </div>
-                          <div class="mb-2 form-check">
-                            <input class="form-check-input" id="exampleCheck6" type="checkbox">
-                            <label class="form-check-label" for="exampleCheck6">Mustang</label>
-                          </div>
-                          <div class="mb-2 form-check">
-                            <input class="form-check-input" id="exampleCheck7" type="checkbox">
-                            <label class="form-check-label" for="exampleCheck7">Dodge</label>
-                          </div>
-                          <div class="mb-5 form-check">
-                            <input class="form-check-input" id="exampleCheck8" type="checkbox">
-                            <label class="form-check-label" for="exampleCheck8">BMW</label>
-                          </div>
+                          <h5 class="mb-3">Show by brand</h5>                                                
 
-                          <h5 class="mb-4">Price range</h5>
+                          <div (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" class="form-check">
+                            <input *ngIf="setCurrentBrand" class="form-check-input" id="seaColor" type="checkbox" routerLink="/car/brand/{{brand.brandId}}">
+                            <label  class="form-check-label d-flex align-items-center" ><span>{{brand.brandName}}</span></label>
+                          </div>     
+                          
+                          
+                         
+
+                          <h5 class="mb-4" style="margin-top: 15mm;">Price range</h5>
                           <div class="price-range pt-4 mb-5" style="margin-top: -10mm;">
                             <div id="priceRange"></div>
                             <div class="row pt-2">
@@ -56,31 +32,13 @@
                           </div>
 
                           <h5 class="mb-3">Shop by color</h5>
-                          <form action="#">
-                            <div class="form-check">
+                          <form action="#">                           
+
+                            <div *ngFor="let color of colors" class="form-check">
                               <input class="form-check-input" id="seaColor" type="checkbox">
-                              <label class="form-check-label d-flex align-items-center" for="seaColor"><i class="fas fa-circle text-primary me-2 text-xs"></i><span>Sea</span></label>
+                              <label class="form-check-label d-flex align-items-center"><span>{{color.colorName}}</span></label>
                             </div>
-                            <div class="form-check">
-                              <input class="form-check-input" id="yellowColor" type="checkbox">
-                              <label class="form-check-label d-flex align-items-center" for="yellowColor"><i class="fas fa-circle text-warning me-2 text-xs"></i><span>Yellow</span></label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" id="greenColor" type="checkbox">
-                              <label class="form-check-label d-flex align-items-center" for="greenColor"><i class="fas fa-circle text-success me-2 text-xs"></i><span>Green</span></label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" id="cyanColor" type="checkbox">
-                              <label class="form-check-label d-flex align-items-center" for="cyanColor"><i class="fas fa-circle text-info me-2 text-xs"></i><span>Cyan</span></label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" id="redColor" type="checkbox">
-                              <label class="form-check-label d-flex align-items-center" for="redColor"><i class="fas fa-circle text-danger me-2 text-xs"></i><span>Red</span></label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" id="blackColor" type="checkbox">
-                              <label class="form-check-label d-flex align-items-center" for="blackColor"><i class="fas fa-circle text-dark me-2 text-xs"></i><span>Black</span></label>
-                            </div>
+
                           </form>
                         </div>                                                                                           
                       </div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,11 @@ import { ContactPageComponent } from './components/pages/contact-page/contact-pa
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { SigninPageComponent } from './components/pages/signin-page/signin-page.component';
 import { CardInformationComponent } from './components/card-information/card-information.component';
+import { AngularTiltModule } from "angular-tilt";
+
+import { TiltCardComponent } from './components/tilt-card/tilt-card.component';
+import { CarComponent } from './components/car/car.component';
+
 
 const appRoutes: Routes=[
   {path: 'carspage', component:CarspageComponent},
@@ -26,6 +32,7 @@ const appRoutes: Routes=[
   {path: "signinpage", component:SigninPageComponent},
   {path: "loginpage", component:LoginPageComponent},
   {path: "cardinformation", component:CardInformationComponent},
+  {path: "tiltcard", component:TiltCardComponent},
 ];
 
 @NgModule({
@@ -44,13 +51,22 @@ const appRoutes: Routes=[
     ContactPageComponent,
     LoginPageComponent,
     SigninPageComponent,
-    CardInformationComponent
+    CardInformationComponent,
+    TiltCardComponent,
+    CarComponent,
+
+
   ],
   imports: [
     BrowserModule,
+    
+    AngularTiltModule,
     RouterModule.forRoot(appRoutes),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
